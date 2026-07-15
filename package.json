@@ -1,0 +1,25 @@
+{
+  "name": "prog_classe3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "webpack"
+  },
+  "keywords": [
+    "Node.js",
+    "webpack",
+    "jest",
+    "HTML",
+    "CSS",
+    "JS"
+  ],
+  "author": "Gustavo Dorneles Pezzini",
+  "license": "MIT",
+  "description": "Sistema para triagem de Pacientes",
+  "devDependencies": {
+    "jest": "^30.4.2",
+    "webpack": "^5.108.4",
+    "webpack-cli": "^7.2.1"
+  }
+}
