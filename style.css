@@ -8,9 +8,9 @@ text-align: center;
 
 }body{
     box-sizing: border-box;
-    background: linear-gradient(to right, rgb(65, 31, 31), rgb(14, 14, 26), rgb(65, 31, 31));
+    background: linear-gradient(to right, rgb(53, 0, 84), rgb(14, 14, 26), rgb(53, 0, 84));
 }.sexo{
-   color: #963131;
+   color: #3800ba;
 }
 
 
@@ -31,7 +31,7 @@ text-align: center;
   color: rgb(234, 234, 234);
   font-weight: 700;
   transition: 0.6s;
-  box-shadow: 0px 0px 60px #651f1f;
+  box-shadow: 0px 0px 60px #380071;
 
 }
 
@@ -40,8 +40,8 @@ text-align: center;
 }
 
 .btn:hover {
-  background: rgb(57, 1, 1);
-  background: linear-gradient(270deg, rgba(75, 10, 10, 0.681) 0%, rgba(232, 31, 31, 0.873) 60%);
+  background: rgb(37, 1, 95);
+  background: linear-gradient(270deg, rgba(25, 0, 45, 0.681) 0%, rgba(98, 0, 255, 0.873) 60%);
   color: rgb(4, 4, 38);
 }
 .inputone {
@@ -50,7 +50,7 @@ text-align: center;
 
 
   color: white;
-  border: 2px solid rgb(65, 31, 31);
+  border: 2px solid rgb(52, 0, 129);
   border-radius: 10px;
   padding: 10px 25px;
   background: transparent;
@@ -63,7 +63,7 @@ text-align: center;
 
 
   color: white;
-  border: 2px solid rgb(65, 31, 31);
+  border: 2px solid rgb(52, 0, 129);
   border-radius: 10px;
   padding: 10px 25px;
   background: transparent;
@@ -76,7 +76,7 @@ text-align: center;
 
 
   color: white;
-  border: 2px solid rgb(65, 31, 31);
+  border: 2px solid rgb(52, 0, 129);
   border-radius: 10px;
   padding: 10px 25px;
   background: transparent;
@@ -88,7 +88,7 @@ text-align: center;
 
 
   color: white;
-  border: 2px solid rgb(65, 31, 31);
+  border: 2px solid rgb(52, 0, 129);
   border-radius: 10px;
   padding: 10px 25px;
   background: transparent;
@@ -101,9 +101,105 @@ text-align: center;
 
 
   color: white;
-  border: 2px solid rgb(65, 31, 31);
+  border: 2px solid rgb(52, 0, 129);
   border-radius: 10px;
   padding: 10px 25px;
   background: transparent;
   max-width: 190px;
 }
+.switch {
+  background-color: white;
+  width: 233px;
+  height: 88px;
+  position: absolute;
+  border-radius: 50px;
+  border: 8px solid #ccc;
+  cursor: pointer;
+  user-select: none;
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.switch::before,
+.switch::after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  position: absolute;
+  border-radius: 50%;
+  top: -11%;
+  left: -4%;
+  transition:
+    all 350ms cubic-bezier(0, 0.95, 0.38, 0.98),
+    background 150ms ease;
+  transform-origin: right center;
+}
+.switch::before {
+  border: 19.2px solid rgb(76, 189, 226);
+}
+.switch::after {
+  background: #fbd3e1;
+  border: 19.2px solid #ff516e;
+}
+.gender-taggle:checked + .switch:before {
+  background: #1cb7ea;
+  transform: translateX(165%);
+  border: 19.2px solid #ff516e;
+}
+.gender-taggle + .switch .female {
+  color: #ff516e;
+}
+.gender-taggle:checked + .switch .male {
+  color: #1cb7ea;
+}
+.gender-taggle + .switch .male {
+  color: #ccc;
+}
+.gender-taggle:checked + .switch .female {
+  color: #ccc;
+}
+.gender-taggle:checked + .switch:after {
+  background: #d3f0fb;
+  transform: translateX(165%);
+  border: 19.2px solid #1cb7ea;
+}
+.female,
+.male {
+  position: absolute;
+  font-weight: lighter;
+  color: #ccc;
+}
+.female {
+  z-index: -1;
+  top: 3%;
+  left: 3%;
+  transform: rotate(180deg);
+  font-size: 125px;
+  font-weight: 400;
+}
+.male {
+  z-index: -1;
+  left: 87%;
+  top: -97%;
+  font-size: 70px;
+  transform: rotate(-50deg);
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
