@@ -1,12 +1,12 @@
 class Paciente {
-    constructor(nome, peso, altura, circCintura, circQuadril, genero) {
+    constructor(nome, peso, altura, circCintura, circQuadril, sexo) {
 
         this.nome = nome,
             this.peso = peso,
             this.altura = altura,
             this.circCintura = circCintura,
             this.circQuadril = circQuadril,
-            this.genero = genero
+            this.sexo = sexo
 
     }
     calcularIMC() {
@@ -19,7 +19,7 @@ class Paciente {
         return rcq
     }
     classificarIMC() {
-        let imc = this.classificarIMC()
+        let imc = this.calcularIMC()
 
         if (imc < 0.0) {
             return 'por favor, coloque sua altura real'
@@ -47,7 +47,7 @@ class Paciente {
     }
     classificarRCQ() {
         let rcq = this.calcularRCQ()
-        if (this.genero === 'M') {
+        if (this.sexo === 'M') {
 
             if (rcq < 0.90) {
                 return 'risco baixo'
@@ -59,7 +59,7 @@ class Paciente {
             return 'risco alto'
 
 
-        } else if (this.genero === 'F') {
+        } else if (this.sexo === 'F') {
             
             if (rcq < 0.80) {
                 return 'risco baixo'

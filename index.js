@@ -1,4 +1,4 @@
-const Pacient = require('./Paciente')
+const Paciente = require('./Paciente')
 
 let resposta = document.getElementById('resposta')
 
@@ -26,7 +26,14 @@ progPrincipal.addEventListener('click',()=>{
     let rcq = pac1.calcularRCQ()
     let classificarRCQ = pac1.classificarRCQ()
 
-    resposta.innerHTML= ''
-    resposta.innerHTML= `O IMC do ${pac1.nome}`
+  resposta.innerHTML = ''; // Limpa a resposta anterior
+
+// Use += para adicionar texto sem apagar a linha de cima
+// Adicionei <br> no final para pular linha na tela do navegador
+resposta.innerHTML += `O nome do paciente é: ${pac1.nome}<br>`;
+resposta.innerHTML += `A classificação do IMC é: ${pac1.classificarIMC()}<br>`; // Com ()
+resposta.innerHTML += `O RCQ é: ${pac1.calcularRCQ().toFixed(2)}<br>`; // Com () e F maiúsculo
+resposta.innerHTML += `A classificação do RCQ é: ${pac1.classificarRCQ()}<br>`; // Com ()
+
 })
 
