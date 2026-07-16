@@ -249,6 +249,7 @@ body {
 }
 
 small{
+  display: block; 
 text-align: center;
 color: #ffffff;
 }
