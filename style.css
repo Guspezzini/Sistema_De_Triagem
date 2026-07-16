@@ -1,25 +1,29 @@
-*{
-    margin: 100;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Garante que tamanhos batam certinho */
 }
 
-.all{
-text-align: center;
-
-}body{
-    box-sizing: border-box;
-    background: linear-gradient(to right, rgb(53, 0, 84), rgb(14, 14, 26), rgb(53, 0, 84));
-}.sexo{
-   color: #3800ba;
+.all {
+  text-align: center;
 }
 
+body {
+  background: linear-gradient(to right, rgb(53, 0, 84), rgb(14, 14, 26), rgb(53, 0, 84));
+}
+
+.sexo {
+  color: #3800ba;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+}
 
 .btn {
-
   display: block;
-  margin: 0 auto;
-
-
+  margin: 20px auto;
   font-size: 1.2rem;
   padding: 1rem 2.5rem;
   border: none;
@@ -32,7 +36,6 @@ text-align: center;
   font-weight: 700;
   transition: 0.6s;
   box-shadow: 0px 0px 60px #380071;
-
 }
 
 .btn:active {
@@ -44,11 +47,10 @@ text-align: center;
   background: linear-gradient(270deg, rgba(25, 0, 45, 0.681) 0%, rgba(98, 0, 255, 0.873) 60%);
   color: rgb(4, 4, 38);
 }
-.inputone {
+
+.inputone, .inputtwo, .inputtree, .inputfour, .inputfive {
   display: block;
-  margin: 0 auto;
-
-
+  margin: 15px auto;
   color: white;
   border: 2px solid rgb(52, 0, 129);
   border-radius: 10px;
@@ -56,150 +58,188 @@ text-align: center;
   background: transparent;
   max-width: 190px;
 }
-.inputtwo {
 
-  display: block;
-  margin: 0 auto;
+/* --- AJUSTES DO SWITCH PADRONIZADO PARA SEU HTML --- */
 
-
-  color: white;
-  border: 2px solid rgb(52, 0, 129);
-  border-radius: 10px;
-  padding: 10px 25px;
-  background: transparent;
-  max-width: 190px;
+.switch__input {
+  color: hsl(223, 10%, 90%);
+  font-size: 15px;
 }
-.inputtree {
 
+.switch,
+.switch__input,
+.switch__handle-sides,
+.switch__handle-side,
+.switch__handle-labels,
+.switch__handle-label,
+.switch__handle-texture {
   display: block;
-  margin: 0 auto;
-
-
-  color: white;
-  border: 2px solid rgb(52, 0, 129);
-  border-radius: 10px;
-  padding: 10px 25px;
-  background: transparent;
-  max-width: 190px;
 }
-.inputfour {
-  display: block;
-  margin: 0 auto;
 
-
-  color: white;
-  border: 2px solid rgb(52, 0, 129);
-  border-radius: 10px;
-  padding: 10px 25px;
-  background: transparent;
-  max-width: 190px;
-}
-.inputfive {
-
-  display: block;
-  margin: 0 auto;
-
-
-  color: white;
-  border: 2px solid rgb(52, 0, 129);
-  border-radius: 10px;
-  padding: 10px 25px;
-  background: transparent;
-  max-width: 190px;
-}
-.switch {
-  background-color: white;
-  width: 233px;
-  height: 88px;
-  position: absolute;
-  border-radius: 50px;
-  border: 8px solid #ccc;
+.switch,
+.switch__input {
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.switch {
+  margin: 20px auto;
+  position: relative;
+  width: 12em;   /* Aumentado de 5em para 12em para caber as palavras inteiras */
+  height: 4em;   /* Ajustado para formato retangular mais anatômico */
+}
+
+.switch__input {
+  background-color: transparent !important; 
+  box-shadow: none !important;
+  border-radius: 0.25em;
+  outline: transparent;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: background-color 0.4s, box-shadow 0.4s;
+  -webkit-appearance: none;
+  appearance: none;
+  z-index: 2;   /* Mantém o clique sempre funcional */
+}
+
+.switch__input:before {
+  border-radius: inherit;
+  box-shadow: 0 0 0 max(0.125em, 1px) hsla(223, 90%, 50%, 0);
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  transition: box-shadow 0.15s linear;
+}
+
+.switch__handle,
+.switch__handle-sides,
+.switch__handle-side,
+.switch__handle-labels,
+.switch__handle-label {
+  position: absolute;
+}
+
+.switch__handle,
+.switch__handle-label {
+  transition: transform 0.4s cubic-bezier(0.65, 0, 0.36, 1.6);
+}
+
+.switch__handle,
+.switch__handle-sides,
+.switch__handle-texture {
+  border-radius: 20px; /* Bordas mais arredondadas para combinar com seus inputs */
+}
+
+.switch__handle {
+  box-shadow: 0.25em 0.25em 0.25em hsla(223, 10%, 10%, 0.4);
+  top: 10%;
+  left: 5%;
+  width: 45%;   /* Largura do botão deslizante interno ajustada */
+  height: 80%;
+  rotate: 0deg; /* Removido rotação de 270deg antiga para o botão ficar horizontal */
+}
+
+.switch__handle-sides,
+.switch__handle-labels,
+.switch__handle-texture {
+  width: 100%;
+  height: 100%;
+}
+
+.switch__handle-sides,
+.switch__handle-side {
+  background-color: hsl(223, 10%, 85%);
+  transition: background-color 0.4s, transform 0.4s cubic-bezier(0.65, 0, 0.36, 1.6);
+}
+
+.switch__handle-sides {
+  --side-on: hsl(302, 90%, 40%);
+  background-image: linear-gradient(90deg, transparent 50%, var(--side-on) 50%);
+  overflow: hidden;
+}
+
+.switch__handle-side {
+  background-image: linear-gradient(90deg, var(--side-on) 50%, transparent 50%);
+  transform: translateX(-50%);
+  width: 200%;
+  height: 100%;
+}
+
+.switch__handle-labels {
+  transform-style: preserve-3d;
+  -webkit-user-select: none;
+  -moz-user-select: none;
   user-select: none;
-  display: inline-block;
+}
+
+/* Corrigido: Texto em pé (0deg) e na cor branca */
+.switch__handle-label {
+  backface-visibility: hidden;
+  font-family: sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  color: #ffffff !important; 
+  text-shadow: 0 0 0.125em rgba(0, 0, 0, 0.6);
+  line-height: 1;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-}
-.switch::before,
-.switch::after {
-  content: "";
-  width: 50px;
-  height: 50px;
-  background-color: white;
-  position: absolute;
-  border-radius: 50%;
-  top: -11%;
-  left: -4%;
-  transition:
-    all 350ms cubic-bezier(0, 0.95, 0.38, 0.98),
-    background 150ms ease;
-  transform-origin: right center;
-}
-.switch::before {
-  border: 19.2px solid rgb(76, 189, 226);
-}
-.switch::after {
-  background: #fbd3e1;
-  border: 19.2px solid #ff516e;
-}
-.gender-taggle:checked + .switch:before {
-  background: #1cb7ea;
-  transform: translateX(165%);
-  border: 19.2px solid #ff516e;
-}
-.gender-taggle + .switch .female {
-  color: #ff516e;
-}
-.gender-taggle:checked + .switch .male {
-  color: #1cb7ea;
-}
-.gender-taggle + .switch .male {
-  color: #ccc;
-}
-.gender-taggle:checked + .switch .female {
-  color: #ccc;
-}
-.gender-taggle:checked + .switch:after {
-  background: #d3f0fb;
-  transform: translateX(165%);
-  border: 19.2px solid #1cb7ea;
-}
-.female,
-.male {
-  position: absolute;
-  font-weight: lighter;
-  color: #ccc;
-}
-.female {
-  z-index: -1;
-  top: 3%;
-  left: 3%;
-  transform: rotate(180deg);
-  font-size: 125px;
-  font-weight: 400;
-}
-.male {
-  z-index: -1;
-  left: 87%;
-  top: -97%;
-  font-size: 70px;
-  transform: rotate(-50deg);
+  text-align: center;
+  /* Removido o rotateZ(90deg) para o texto não ficar de lado */
+  transform: translate(-50%, -50%) rotateY(0deg) translateZ(0.55rem);
 }
 
-@keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-30px);
-  }
-  60% {
-    transform: translateY(-15px);
-  }
+/* Segunda palavra (Feminino) mantida em pé e branca */
+.switch__handle-label + .switch__handle-label {
+  color: #ffffff !important;
+  transform: translate(-50%, -50%) rotateY(180deg) translateZ(0.55rem);
 }
 
+.switch__handle-texture {
+  background-image: linear-gradient(
+    90deg,
+    hsla(0, 0%, 100%, 0),
+    hsla(0, 0%, 100%, 0.3) 20%,
+    hsla(0, 0%, 100%, 0) 40%,
+    hsla(0, 0%, 0%, 0) 50%,
+    hsla(0, 0%, 0%, 0.4)
+  );
+  transform: translateZ(0);
+}
+
+/* Distância de rolagem lateral ajustada para a nova largura retangular */
+.switch__input:checked ~ .switch__handle {
+  transform: translateX(100%);
+}
+
+.switch__input:checked ~ .switch__handle .switch__handle-side {
+  transform: translateX(0);
+}
+
+.switch__input:checked ~ .switch__handle .switch__handle-label {
+  transform: translate(-50%, -50%) rotateY(180deg) translateZ(0.55rem);
+}
+
+.switch__input:checked ~ .switch__handle .switch__handle-label + .switch__handle-label {
+  transform: translate(-50%, -50%) rotateY(360deg) translateZ(0.55rem);
+}
+
+.switch__label {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+}
+
+/* Modo escuro limpo e integrado */
+@media (prefers-color-scheme: dark) {
+  .switch__handle-sides,
+  .switch__handle-side {
+    background-color: hsl(256, 100%, 40%);
+  }
+  .switch__input {
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+}
